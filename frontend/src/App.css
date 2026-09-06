@@ -1,0 +1,30 @@
+.App {
+    min-height: 100%;
+}
+
+/* Live feed row entrance */
+@keyframes rq-fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.rq-fade-in { animation: rq-fade-in 0.2s ease-out; }
+
+/* Route dash draw */
+@keyframes rq-dash {
+    to { stroke-dashoffset: 0; }
+}
+
+/* KPI subtle top accent */
+.rq-accent-top { position: relative; }
+.rq-accent-top::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    background: var(--rq-accent, hsl(190 85% 45%));
+}
+
+.rq-scroll-fade {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 12px), transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 12px), transparent);
+}
